@@ -144,7 +144,9 @@ echo "Install SSH2"
 echo "-------------------------"
 echo "-"
 
-yum -y install gcc php71w-devel libssh2 libssh2-devel;cd /opt/;wget https://github.com/Sean-Der/pecl-networking-ssh2/archive/php7.zip;unzip php7.zip;cd pecl-networking-ssh2-php7/;yum -y install php-devel pcre-devel gcc make;sudo phpize;./configure;make;make install;echo "extension=ssh2.so" >  /etc/php.d/ssh2.ini;php -m | grep ssh2;service httpd restart
+# yum -y install gcc php71w-devel libssh2 libssh2-devel;cd /opt/;wget https://github.com/Sean-Der/pecl-networking-ssh2/archive/php7.zip;unzip php7.zip;cd pecl-networking-ssh2-php7/;yum -y install php-devel pcre-devel gcc make;sudo phpize;./configure;make;make install;echo "extension=ssh2.so" >  /etc/php.d/ssh2.ini;php -m | grep ssh2;
+
+service httpd restart
 
 # tamb
 sudo yum install -y git
